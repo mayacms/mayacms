@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools >= 80.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mayacms*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "mayacms.conf.__version__"}
+
+[project]
+name = "mayacms"
+dynamic = ["version"]
+requires-python = ">= 3.14"
+authors = [{name = "Nurul Amin Muhit", email = "me@muhit.me"}]
+maintainers = [{name = "Mayarun Labs", email = "hello@mayarun.io"}]
+description = "The easy-to-use and developer-friendly content management system based on django."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E.*", "licenses/*.txt", "AUTHORS.md"]
+keywords = ["django", "mayacms", "cms", "python"]
+dependencies = [
+    "django >= 6.0",
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Web Environment",
+    "Environment :: Plugins",
+    "Framework :: Django",
+    "Framework :: Django :: 6.0",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development",
+]
+
+[project.scripts]
+mayacms-admin = "django.core.management:execute_from_command_line"
+
+[project.urls]
+Homepage = "https://muhit.me"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/mayacms/mayacms.git"
