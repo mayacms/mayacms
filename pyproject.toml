@@ -3,6 +3,8 @@ requires = ["setuptools >= 80.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
+namespaces = true
+where = ["src"]
 include = ["mayacms*"]
 
 [tool.setuptools.dynamic]
