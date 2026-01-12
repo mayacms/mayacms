@@ -22,7 +22,7 @@ def autodiscover_modules(*args, **kwargs):
         # Attempt to auto-discover the apps' modules.
         try:
             if register_to:
-                    before_import_registry = copy.copy(register_to._registry)
+                before_import_registry = copy.copy(register_to._registry)
 
             # Discover Modules (e.g. mayacms.contrib.*)
             module_name = '%s.%s' % (app_name, module_to_search)
