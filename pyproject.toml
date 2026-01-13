@@ -6,10 +6,11 @@ build-backend = "setuptools.build_meta"
 include-package-data = true
 package-dir = { "" = "src" }
 
-[tool.setuptools.packages.find]
-namespaces = true
-where = ["src"]
-include = ["mayacms*"]
+[tool.setuptools.packages]
+find = {where = ["src"], include = ["mayacms*"], namespaces = true}
+
+[tool.setuptools.package-data]
+mayacms = ["contrib/.gitkeep", "widgets/.gitkeep"]
 
 [tool.setuptools.dynamic]
 version = {attr = "mayacms.conf.__version__"}
